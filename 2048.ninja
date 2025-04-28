@@ -1,0 +1,133 @@
+ninja_required_version = 1.8.2
+rule cpp_COMPILER
+ command = c++ $ARGS -MD -MQ $out -MF $DEPFILE -o $out -c $in
+ deps = gcc
+ depfile = $DEPFILE_UNQUOTED
+ description = Compiling C++ object $out
+rule cpp_LINKER
+ command = c++ $ARGS -o $out $in $LINK_ARGS
+ description = Linking target $out
+rule CUSTOM_COMMAND
+ command = $COMMAND
+ description = $DESC
+ restat = 1
+rule REGENERATE_BUILD
+ command = /usr/local/bin/meson --internal regenerate /Users/siva/src/2048.cpp .
+ description = Regenerating build files
+ generator = 1
+build PHONY: phony
+build 2048.p/src_2048.cpp.o: cpp_COMPILER ../src/2048.cpp
+ DEPFILE = 2048.p/src_2048.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_2048.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_gameboard.cpp.o: cpp_COMPILER ../src/gameboard.cpp
+ DEPFILE = 2048.p/src_gameboard.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_gameboard.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_gameboard-graphics.cpp.o: cpp_COMPILER ../src/gameboard-graphics.cpp
+ DEPFILE = 2048.p/src_gameboard-graphics.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_gameboard-graphics.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_game.cpp.o: cpp_COMPILER ../src/game.cpp
+ DEPFILE = 2048.p/src_game.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_game.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_game-input.cpp.o: cpp_COMPILER ../src/game-input.cpp
+ DEPFILE = 2048.p/src_game-input.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_game-input.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_game-graphics.cpp.o: cpp_COMPILER ../src/game-graphics.cpp
+ DEPFILE = 2048.p/src_game-graphics.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_game-graphics.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_game-pregamemenu.cpp.o: cpp_COMPILER ../src/game-pregamemenu.cpp
+ DEPFILE = 2048.p/src_game-pregamemenu.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_game-pregamemenu.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_global.cpp.o: cpp_COMPILER ../src/global.cpp
+ DEPFILE = 2048.p/src_global.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_global.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_loadresource.cpp.o: cpp_COMPILER ../src/loadresource.cpp
+ DEPFILE = 2048.p/src_loadresource.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_loadresource.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_menu.cpp.o: cpp_COMPILER ../src/menu.cpp
+ DEPFILE = 2048.p/src_menu.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_menu.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_menu-graphics.cpp.o: cpp_COMPILER ../src/menu-graphics.cpp
+ DEPFILE = 2048.p/src_menu-graphics.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_menu-graphics.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_saveresource.cpp.o: cpp_COMPILER ../src/saveresource.cpp
+ DEPFILE = 2048.p/src_saveresource.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_saveresource.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_scores.cpp.o: cpp_COMPILER ../src/scores.cpp
+ DEPFILE = 2048.p/src_scores.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_scores.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_scores-graphics.cpp.o: cpp_COMPILER ../src/scores-graphics.cpp
+ DEPFILE = 2048.p/src_scores-graphics.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_scores-graphics.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_statistics.cpp.o: cpp_COMPILER ../src/statistics.cpp
+ DEPFILE = 2048.p/src_statistics.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_statistics.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_statistics-graphics.cpp.o: cpp_COMPILER ../src/statistics-graphics.cpp
+ DEPFILE = 2048.p/src_statistics-graphics.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_statistics-graphics.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_tile.cpp.o: cpp_COMPILER ../src/tile.cpp
+ DEPFILE = 2048.p/src_tile.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_tile.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048.p/src_tile-graphics.cpp.o: cpp_COMPILER ../src/tile-graphics.cpp
+ DEPFILE = 2048.p/src_tile-graphics.cpp.o.d
+ DEPFILE_UNQUOTED = 2048.p/src_tile-graphics.cpp.o.d
+ ARGS = -I2048.p -I. -I.. -I../src/headers -fdiagnostics-color=always -Wall -Winvalid-pch -Wextra -std=c++14 -O0 -g
+build 2048: cpp_LINKER 2048.p/src_2048.cpp.o 2048.p/src_gameboard.cpp.o 2048.p/src_gameboard-graphics.cpp.o 2048.p/src_game.cpp.o 2048.p/src_game-input.cpp.o 2048.p/src_game-graphics.cpp.o 2048.p/src_game-pregamemenu.cpp.o 2048.p/src_global.cpp.o 2048.p/src_loadresource.cpp.o 2048.p/src_menu.cpp.o 2048.p/src_menu-graphics.cpp.o 2048.p/src_saveresource.cpp.o 2048.p/src_scores.cpp.o 2048.p/src_scores-graphics.cpp.o 2048.p/src_statistics.cpp.o 2048.p/src_statistics-graphics.cpp.o 2048.p/src_tile.cpp.o 2048.p/src_tile-graphics.cpp.o
+ LINK_ARGS = -Wl,-dead_strip_dylibs -Wl,-headerpad_max_install_names
+build test: phony meson-internal__test
+build meson-internal__test: CUSTOM_COMMAND all meson-test-prereq PHONY
+ COMMAND = /usr/local/bin/meson test --no-rebuild --print-errorlogs
+ DESC = Running$ all$ tests
+ pool = console
+build benchmark: phony meson-internal__benchmark
+build meson-internal__benchmark: CUSTOM_COMMAND all meson-benchmark-prereq PHONY
+ COMMAND = /usr/local/bin/meson test --benchmark --logbase benchmarklog --num-processes=1 --no-rebuild
+ DESC = Running$ benchmark$ suite
+ pool = console
+build install: phony meson-internal__install
+build meson-internal__install: CUSTOM_COMMAND PHONY | all
+ DESC = Installing$ files
+ COMMAND = /usr/local/bin/meson install --no-rebuild
+ pool = console
+build dist: phony meson-internal__dist
+build meson-internal__dist: CUSTOM_COMMAND PHONY
+ DESC = Creating$ source$ packages
+ COMMAND = /usr/local/bin/meson dist
+ pool = console
+build ctags: phony meson-internal__ctags
+build meson-internal__ctags: CUSTOM_COMMAND PHONY
+ COMMAND = /usr/local/bin/meson --internal tags ctags /Users/siva/src/2048.cpp
+ pool = console
+build uninstall: phony meson-internal__uninstall
+build meson-internal__uninstall: CUSTOM_COMMAND PHONY
+ COMMAND = /usr/local/bin/meson --internal uninstall
+ pool = console
+build all: phony 2048
+build meson-test-prereq: phony
+build meson-benchmark-prereq: phony
+build clean: phony meson-internal__clean
+build meson-internal__clean: CUSTOM_COMMAND PHONY
+ COMMAND = /usr/local/bin/ninja -t clean
+ description = Cleaning
+build build.ninja: REGENERATE_BUILD ../meson.build meson-private/coredata.dat
+ pool = console
+build reconfigure: REGENERATE_BUILD PHONY
+ pool = console
+build ../meson.build meson-private/coredata.dat: phony
+default all
